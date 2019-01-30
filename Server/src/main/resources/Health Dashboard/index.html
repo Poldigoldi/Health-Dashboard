@@ -10,13 +10,21 @@
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
     <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 </head>
+<header class="header">
+    <div class="text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary-main">Health Dashboard</span>
+            <span class="heading-primary-sub">Your cloud client analysis</span>
+        </h1>
+        <a href="#" class="btn btn-white btn-animated">created by Leonard Goldschmidt</a>
+    </div>
+</header>
 <body>
-<h1>Health Data</h1>
 <div id="root"></div>
 <script src="scripts.js"></script>
-<span id="cpuaverage"></span>
+<span id="cpuaverage" style="display:none"></span>
 <div id="chart"></div>
-<canvas id="myChart" width="400" height="400"></canvas>
+<canvas id="myChart" width="1000" height="400"></canvas>
 
 
 </body>

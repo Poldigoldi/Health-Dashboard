@@ -12,7 +12,6 @@ public class DataController {
     @Autowired
     public ServerInformationRepository repository;
 
-    private int id;
     private String StartTestTime;
     private String Provider;
     private String Region;
@@ -38,12 +37,15 @@ public class DataController {
     public AggregatedData aggregatedData() throws IOException {
         double CPUAverage;
         double Sum = 0;
+        int count = 0;
         for (ServerInformation serverInformation : repository.findAll()) {
-            //Sum = Sum + serverInformation.getCPULoad();
-            Sum = serverInformation.getCPULoad();
+            count++;
+            /*Get average of last 5 entries*/
+            if (repository.count() - count <= 5) {
+                Sum = Sum + serverInformation.getCPULoad();
+            }
         }
-        //CPUAverage = Sum / repository.count();
-        CPUAverage = Sum;
+        CPUAverage = Sum / 5;
 
         return new AggregatedData(CPUAverage);
     }
