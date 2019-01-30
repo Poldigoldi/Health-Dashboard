@@ -42,7 +42,9 @@ public class InformationController {
         httpPost.setEntity(entity);
 
         CloseableHttpResponse response = client.execute(httpPost);
-        System.out.println("Response code: " + response.getStatusLine().getStatusCode());
+        if (response.getStatusLine().getStatusCode() != 200) {
+            System.out.println("ERROR RESPONSE code: " + response.getStatusLine().getStatusCode());
+        }
         client.close();
     }
 }
