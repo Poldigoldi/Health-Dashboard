@@ -1,4 +1,4 @@
-package hello.HealthData;
+package Healthdata;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

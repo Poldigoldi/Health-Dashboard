@@ -1,4 +1,4 @@
-package hello.HealthData;
+package Healthdata;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
